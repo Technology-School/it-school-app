@@ -1,0 +1,35 @@
+version: '0.1'
+services:
+  postgres:
+    container_name: school_postgres
+    image: postgis/postgis:12-3.1-alpine
+    restart: unless-stopped
+    volumes:
+      - ./.docker/postgres/create-database.sh:/docker-entrypoint-initdb.d/create-database.sh
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST_AUTH_METHOD: ${POSTGRES_HOST_AUTH_METHOD}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DEVELOPMENT_DATABASE: ${DEVELOPMENT_DATABASE}
+      TEST_DATABASE: ${TEST_DATABASE}
+
+  pgadmin:
+    container_name: school_pgadmin
+    image: dpage/pgadmin4:6.8
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - '8080:80'
+
+volumes:
+  postgres-data:
+    driver: local
