@@ -21,6 +21,16 @@ $ yarn start:dev
 $ yarn start:prod
 ```
 
+## Migration command
+
+```bash
+# generate migration
+$ yarn migration:generate
+
+# run migration
+$ yarn migration:run
+```
+
 ## Test
 
 ```bash
