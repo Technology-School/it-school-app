@@ -1,0 +1,10 @@
+type Query {
+  """
+  Список пользователей
+  """
+  users(where: WhereUserInput): User
+}
+
+input WhereUserInput {
+	id: Int!
+}
