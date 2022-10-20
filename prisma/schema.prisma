@@ -19,9 +19,10 @@ model Employee {
 model Children {
   id String @id @db.Uuid
 
-  firstName  String  @db.VarChar(40)
-  lastName   String  @db.VarChar(40)
-  middleName String? @db.VarChar(40)
+  firstName  String   @db.VarChar(40)
+  lastName   String   @db.VarChar(40)
+  middleName String?  @db.VarChar(40)
+  birthday   DateTime @db.Date
 
   class   Class @relation(fields: [classId], references: [id])
   classId Int
