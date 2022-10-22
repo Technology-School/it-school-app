@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
-import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { UserModule } from 'src/user/user.module';
-import { PrismaModule } from 'src/prisma/prisma.module';
+import { GraphQLModule } from '@nestjs/graphql'
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
+import { UserModule } from 'src/user/user.module'
+import { PrismaModule } from 'src/prisma/prisma.module'
 
 @Module({
   imports: [
@@ -13,8 +13,9 @@ import { PrismaModule } from 'src/prisma/prisma.module';
       useFactory: () => ({
         typePaths: ['../**/graphql/*.graphql'],
       }),
-    }),],
+    }),
+  ],
   controllers: [],
   providers: [],
 })
-export class AppModule { }
+export class AppModule {}

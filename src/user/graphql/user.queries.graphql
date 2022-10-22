@@ -6,5 +6,5 @@ type Query {
 }
 
 input WhereUserInput {
-	id: Int!
+	id: Int
 }
