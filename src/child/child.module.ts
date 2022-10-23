@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common'
 import { PrismaModule } from 'src/prisma/prisma.module'
-import { ChildrenResolver } from './graphql/children.resolver'
+import { ChildResolver } from './graphql/child.resolver'
 
 @Module({
   imports: [PrismaModule],
   controllers: [],
-  providers: [ChildrenResolver],
+  providers: [ChildResolver],
   exports: [],
 })
-export class ChildrenModule { }
+export class ChildModule { }

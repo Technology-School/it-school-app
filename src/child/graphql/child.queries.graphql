@@ -6,7 +6,7 @@ type Query {
   """
   Получить ученика
   """
-  children(where: WhereChildInput!): Child
+  child(where: WhereChildInput!): Child
 
 }
 

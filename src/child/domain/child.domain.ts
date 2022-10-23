@@ -1,0 +1,1 @@
+export type ChildrenId = string & { readonly ChildrenId: unique symbol }
