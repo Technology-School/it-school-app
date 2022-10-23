@@ -1,0 +1,15 @@
+type Query {
+  """
+  Получить список учеников
+  """
+  children(where: WhereChildInput): [Child]!
+  """
+  Получить ученика
+  """
+  children(where: WhereChildInput!): Child
+
+}
+
+input WhereChildInput {
+	id: Int
+}
